@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="FitPlate_DienaMs"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FitPlate_DienaMs"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".RecipeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".InputUserActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".FoodTrackerActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".FoodJournalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KonsumsiAirActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".MengukurTubuhActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ArtikelAirActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ArtikelKonsumsiActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ProfilActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".GuideActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>
