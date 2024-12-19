@@ -2,29 +2,47 @@ package com.example.fitplate_dienams
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fitplate_dienams.databinding.RecipeGuideBinding
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.fitplate_dienams.databinding.ActivityRecipeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class RecipeActivity : AppCompatActivity() {
 
-    private lateinit var binding: RecipeGuideBinding
+    private lateinit var binding: ActivityRecipeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RecipeGuideBinding.inflate(layoutInflater)
+        binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = RecipePagerAdapter(this)
-        binding.viewPager.adapter = adapter
+        setupTabs()
+    }
+
+    private fun setupTabs() {
+        val fragments = listOf(
+            BreakfastFragment(),
+            LunchFragment(),
+            DinnerFragment(),
+            SnackFragment()
+        )
+
+        val titles = listOf("Breakfast", "Lunch", "Dinner", "Snack")
+
+        binding.viewPager.adapter = RecipePagerAdapter(this, fragments)
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.text = when (position) {
-                0 -> "Breakfast"
-                1 -> "Lunch"
-                2 -> "Dinner"
-                3 -> "Snack"
-                else -> null
-            }
+            tab.text = titles[position]
         }.attach()
+    }
+
+    private class RecipePagerAdapter(
+        activity: AppCompatActivity,
+        private val fragments: List<Fragment>
+    ) : FragmentStateAdapter(activity) {
+
+        override fun getItemCount(): Int = fragments.size
+
+        override fun createFragment(position: Int): Fragment = fragments[position]
     }
 }

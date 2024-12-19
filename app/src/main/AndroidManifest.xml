@@ -72,6 +72,10 @@
             android:name=".LeaderboardActivity"
             android:exported="false"/>
 
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

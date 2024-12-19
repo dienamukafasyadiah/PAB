@@ -300,7 +300,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Diet com.example.fitplate_dienams.Recipe Guide Button -->
+            <!-- Diet com.example.fitplate_dienams.com.example.fitplate_dienams.Recipe Guide Button -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
